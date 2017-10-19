@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :photo_url, null: false
       t.string :question, null: false
       t.integer :vote_tally
-      t.integer :user_id, null: false_
+      t.integer :user_id, null: false
       t.integer :best_answer_id
 
       t.timestamps
