@@ -1,0 +1,15 @@
+.container {
+  margin: auto;
+  width: 50%;
+}
+
+.header {
+  text-decoration: none;
+  color: green;
+  font-size: 200%;
+  font-family: Comic Sans MS;
+}
+
+body {
+  background-color: #ABF4FE;
+}

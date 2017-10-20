@@ -20,7 +20,7 @@
 <body>
   <div class="container">
     <nav>
-      <h1><a href="/">Bork Overflow</a></h1>
+      <h1 class="header"><a class="header" href="/">Bork Overflow</a></h1>
       <ul>
         <% if logged_in? %>
         <li><a href="/users/<%= current_user.id %>">Hello, <%= current_user.first_name %></a></li>
@@ -39,5 +39,6 @@
     <%= yield %>
     </div>
   </div>
+  <img src="../../media/3dDoge.gif">
 </body>
 </html>
