@@ -6,9 +6,11 @@ end
 post '/users' do
   @user = User.new(params[:user])
   if @user.save
-    redirect '/sessions/new'
+    session[:user_id] = @user.id
+    redirect '/'
   else
-    @errors = user.errors.full_messages
+    p @user.errors.full_messages
+    @errors = @user.errors.full_messages
     erb :"users/new"
   end
 end
