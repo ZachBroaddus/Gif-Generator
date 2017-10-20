@@ -17,13 +17,14 @@
 
   <title></title>
 </head>
-<body>
+<body><div id="image"></div>
   <div class="container">
-    <nav>
       <h1 class="header"><a class="header" href="/">Bork Overflow</a></h1>
+    <nav>
       <ul>
+        <li><a href="/">Home</a></li>
         <% if logged_in? %>
-        <li><a href="/users/<%= current_user.id %>">Hello, <%= current_user.first_name %></a></li>
+        <li>Hello, <%= current_user.first_name.capitalize %>!</li>
         <li><form method="POST" action="/sessions">
               <input type="hidden" name="_method" value="DELETE" />
               <input type="submit" class="button" value="Logout" />
