@@ -5,10 +5,14 @@
 <% end %>
 
 <form method="POST" action="/users">
-  <input type="text" name="user[first_name]" placeholder="first_name" value="<%= @user.try(:first_name) %>">
-  <input type="text" name="user[last_name]" placeholder="last_name" value="<%= @user.try(:last_name) %>">
-  <input type="text" name="user[username]" placeholder="Username" value="<%= @user.try(:username) %>">
-  <input type="email" name="user[email]" placeholder="Email" value="<%= @user.email %>">
-  <input type="password" name="user[password]" placeholder="Password">
-  <input type="submit">
+  <input type="text" name="user[first_name]" placeholder="First Name" value="<%= @user.try(:first_name) %>"><br><br>
+
+  <input type="text" name="user[last_name]" placeholder="Last Name" value="<%= @user.try(:last_name) %>"><br><br>
+
+  <input type="text" name="user[username]" placeholder="Username" value="<%= @user.try(:username) %>"><br><br>
+
+  <input type="email" name="user[email]" placeholder="Email" value="<%= @user.email %>"><br><br>
+
+  <input type="password" name="user[password]" placeholder="Password"><br><br>
+  <input type="submit" value= "BORK!">
 </form>
