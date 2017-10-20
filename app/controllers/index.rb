@@ -1,4 +1,3 @@
 get '/' do
-  # redirect '/posts'
-  erb :'index'
+  redirect '/posts'
 end

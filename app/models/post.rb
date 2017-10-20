@@ -6,4 +6,5 @@ class Post < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
   belongs_to :best_answer, class_name: :Answer
+  has_many :answers
 end
