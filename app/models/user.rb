@@ -2,9 +2,9 @@ class User < ActiveRecord::Base
   include BCrypt
 
   validates :username, :first_name, :last_name, :email, presence: true
+  validate :validate_password
   validates_uniqueness_of :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
-  validates :password, length: {minimum: 8, too_short: "%{count} characters is the minimum allowed, fren"}
 
   has_many :posts
   has_many :answers
@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   end
 
   def password=(plain_text_password)
+    @raw_password = plain_text_password
     @password = Password.create(plain_text_password)
     self.hashed_password = @password
   end
@@ -23,4 +24,14 @@ class User < ActiveRecord::Base
   def authenticate(plain_text_password)
     self.password == plain_text_password
   end
+
+  def validate_password
+    if @raw_password.length == 0
+      errors.add(:password, "is required")
+    elsif
+      @raw_password.length < 8
+      errors.add(:password, "must be at least 8 characters")
+    end
+  end
+
 end
