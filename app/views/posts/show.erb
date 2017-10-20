@@ -1,1 +1,18 @@
-<%= We be at the posts page!%>
+<h3><%= @post.question %><br></h3>
+<img src="<%= @post.photo_url %>"><br>
+
+<p><%= @post.answers.count %> Answers</p>
+
+<ul style="list-style: none;">
+  <% @post.answers.each do |answer| %>
+    <li><%= answer.description_text %></li><br>
+      <ul style="list-style: none;">
+
+        <% answer.comments.each do |comment| %>
+          <li><%= comment.description_text %></li><br>
+        <% end %>
+      </ul>
+  <% end %>
+</ul>
+
+
