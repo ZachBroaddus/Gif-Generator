@@ -63,5 +63,20 @@ $(document).ready(function() {
     $("#new_comment_form").show();
   })
 
-  $("#new")
+  $("#new_comment_form").submit(function(event){
+    event.preventDefault();
+    var text = $('#comment_text').val();
+    var name = $('#commenter_name').val();
+
+  if ($.trim($("#comment_text").val()) === "") {
+      alert('you did not fill out the comment field');
+      return false;
+  }
+
+    $('#comment-list').append('<li class="comment"><article><p>' + text + '<br><br></p></article></li>');
+    $("#new_comment_form").hide();
+    $("#comment_on_post").show();
+
+
+  });
 });
