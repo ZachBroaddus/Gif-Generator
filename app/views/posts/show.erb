@@ -13,10 +13,14 @@
       </form>
     </article>
 </div><br>
+
+
+ <a href="/posts/#{@post.id}">Comment?</a>
 <p><%= @post.answers.count %> Answers</p>
 <ul style="list-style: none;">
   <% @post.answers.each do |answer| %>
     <li class='list-answer'><%= answer.description_text %></li><br>
+    <a href="/answers/#{@answer.id}">Comment?</a>
       <ul style="list-style: none;">
 
   <div class='answer-container'>
