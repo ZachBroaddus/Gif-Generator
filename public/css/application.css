@@ -1,7 +1,27 @@
 li {
   margin: 8px 0;
-  text-decoration:
+  list-style-type: none;
 }
+
+nav a {
+  text-decoration: none;
+}
+nav li {
+  font-weight: bold;
+  font-size: 120%;
+  font-family: Comic Sans MS;
+}
+
+.question {
+  font-size: 120%;
+  font-family: Verdana;
+  margin-bottom: 20px;
+}
+
+.poster {
+  font-size: 80%;
+}
+
 
 .header {
   text-decoration: none;
@@ -15,6 +35,7 @@ body {
   font-family: Helvetica;
   margin: auto;
   width: 700px;
+
 }
 
 img {
@@ -76,7 +97,6 @@ width: 300px;
 }
 
 .image {
-  background-color: red;
   padding: 0;
   width: 470px;
 }

@@ -1,4 +1,4 @@
 <% @posts.each do |post| %>
-  <a href="/posts/<%= post.id %>"><%= post.question %><br></a>
+  <a href="/posts/<%= post.id %>"><span class="question"><%= post.question %></span></a> &nbsp;&nbsp;&nbsp; <span class="poster">posted by <%= post.user.username %></span><br><br>
 <% end %>
 
