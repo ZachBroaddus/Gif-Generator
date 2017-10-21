@@ -54,7 +54,7 @@
       <form method="post" action='/posts/<%= @post.id %>/vote' class="inline vote-form" >
         <i type="submit" name="submit_param" value="submit_value" class="fa fa-arrow-circle-up vote-button upvote-button"></i>
       </form>
-      <span class='points'><%= answer.vote_tally %></span>
+      <span class='points'><%= answer.votes.count %></span>
       <form method="post" action='/posts/<%= @post.id %>/vote' class="inline vote-form" >
         <i type="submit" name="submit_param" value="submit_value" class="fa fa-arrow-circle-down vote-button downvote-button"></i>
       </form></center>
