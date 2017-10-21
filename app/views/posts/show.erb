@@ -5,7 +5,7 @@
 
 <ul style="list-style: none;">
   <% @post.answers.each do |answer| %>
-    <li><%= answer.description_text %></li><br>
+    <li><%= answer.description_text  %></li><br>
       <ul style="list-style: none;">
 
         <% answer.comments.each do |comment| %>
@@ -16,8 +16,5 @@
 </ul>
 
 
-<form method="POST" action="answers/new">
-  <textarea placeholder="Yor answer plz" name="answer"></textarea><br><br>
-  <input type="submit" value="BORK!">
-</form>
+<%= erb :'answers/new' %>
 
