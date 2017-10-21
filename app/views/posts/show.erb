@@ -21,10 +21,10 @@
   <% @post.answers.each do |answer| %>
 
     <% if @post.best_answer_id == answer.id %>
-      <i class="fa fa-smile-o" aria-hidden="true"></i> <span id="bestanswer">BEST ANSWER!</span>
+      <i class="fa fa-paw" aria-hidden="true"></i> <span id="bestanswer">BEST ANSWER!</span>
     <% end %>
 
-    <li class='list-answer'><%= answer.description_text %><br><span class="poster">posted by <%= answer.user.username %></span></li><br>
+    <li class='list-answer'><%= answer.description_text %><br>&nbsp;&nbsp;<span class="poster">posted by <%= answer.user.username %></span></li><br>
     <!-- <a href="/answers/#{@answer.id}">Comment?</a> -->
       <ul style="list-style: none;">
 
