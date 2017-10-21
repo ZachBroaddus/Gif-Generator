@@ -45,7 +45,7 @@
   <% @post.answers.each do |answer| %>
 
     <% if @post.best_answer_id == answer.id %>
-      <i class="fa fa-paw" aria-hidden="true"></i> <span id="bestanswer">BEST ANSWER!</span>
+      <br><br><i class="fa fa-paw" aria-hidden="true"></i> <span id="bestanswer">BEST ANSWER!</span>
     <% end %>
 
     <li class='list-answer'><span id="description-text"><%= answer.description_text %></span><br>&nbsp;&nbsp;<span class="poster">posted by <%= answer.user.username %></span></li><br>
