@@ -35,7 +35,8 @@ body {
   font-family: Helvetica;
   margin: auto;
   width: 700px;
-
+  border: 5px solid green;
+  padding: 15px;
 }
 
 img {
@@ -60,6 +61,10 @@ textarea {
 
 #image {
 width: 300px;
+}
+
+#bestanswer {
+  font-family: Comic Sans MS
 }
 
 

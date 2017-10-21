@@ -4,6 +4,14 @@ get '/answers/new' do
   erb :'answers/new'
 end
 
+post '/answers' do
+  @post = Post.find(params[:post_id])
+  @post.best_answer_id = params[:answer_id]
+  if @post.save
+    redirect request.referrer
+  end
+end
+
 post '/posts/:post_id/answers' do
   @post = Post.find(params[:post_id])
   @answer = Answer.new(description_text: params[:answer], user_id: session[:user_id], post_id: @post.id, vote_tally: 0)
