@@ -1,6 +1,10 @@
 li {
   margin: 8px 0;
-  text-decoration:
+  list-style-type: none;
+}
+
+nav a {
+  text-decoration: none;
 }
 
 .header {
@@ -15,6 +19,7 @@ body {
   font-family: Helvetica;
   margin: auto;
   width: 700px;
+  margin-top: 100px;
 }
 
 img {
@@ -28,7 +33,12 @@ img {
 nav {
   position: fixed;
   top: 0;
-  right: 5%;
+  right: 0;
+  height: 70px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 120%;
+
 }
 
 textarea {
