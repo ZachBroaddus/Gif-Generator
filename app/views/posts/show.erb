@@ -1,4 +1,4 @@
-<h3><%= @post.question %>&nbsp;&nbsp;&nbsp; <span class="poster">posted by <%= @post.user.username %></span><br></h3>
+<span id="page-header"><%= @post.question %></span>&nbsp;&nbsp;&nbsp; <span class="poster">submitted by <%= @post.user.username %></span><br><br>
 <img src="<%= @post.photo_url %>" class="image">
 
 <% if logged_in? %>
@@ -29,11 +29,27 @@
 <p><%= @post.answers.count %> Answers</p>
 <ul style="list-style: none;">
   <% @post.answers.each do |answer| %>
-    <li class='list-answer'><%= answer.description_text %></li><br>
-    <a href="/answers/#{@answer.id}">Comment?</a>
+
+    <% if @post.best_answer_id == answer.id %>
+      <i class="fa fa-paw" aria-hidden="true"></i> <span id="bestanswer">BEST ANSWER!</span>
+    <% end %>
+
+    <li class='list-answer'><span id="description-text"><%= answer.description_text %></span><br>&nbsp;&nbsp;<span class="poster">posted by <%= answer.user.username %></span></li><br>
+    <!-- <a href="/answers/#{@answer.id}">Comment?</a> -->
       <ul style="list-style: none;">
 
+<!-- BEST ANSWER -->
+<% if poster? %>
+  <form action="/answers" method="post">
+    <input type="hidden" name="answer_id" value="<%= answer.id %>"/>
+    <input type="hidden" name="post_id" value="<%= @post.id %>"/>
+    <input type="submit" value="Best Answer?">
+  </form>
+<% end %>
+<!-- BEST ANSWER -->
+
   <div class='answer-container'>
+
     <article id="<%= @post.id %>"><center>
       <form method="post" action='/posts/<%= @post.id %>/vote' class="inline vote-form" >
         <i type="submit" name="submit_param" value="submit_value" class="fa fa-arrow-circle-up vote-button upvote-button"></i>
@@ -50,6 +66,9 @@
       </ul>
   <% end %>
 </ul>
+
+
+
 
 <%= erb :'answers/new' %>
 
