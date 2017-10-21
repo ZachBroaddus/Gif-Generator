@@ -3,24 +3,19 @@
 
 <div class='post-container'>
     <article id="<%= @post.id %>">
-      <form method="post" action='/posts/<%= @post.id %>/vote' class="inline-vote-form" >
-        <i type="submit" name="submit_param" value="submit_value" class="fa fa-arrow-circle-up vote-button upvote-button"></i>
+      <form method="post" action='/posts/<%= @post.id %>/vote' class="inline-vote-form-upvote" >
+        <button type="submit" name="submit_param" value="submit_value" class="fa fa-arrow-circle-up vote-button upvote-button"></button>
       </form>
-      <span class='points'><center><%= @post.vote_tally %></center></span>
-      <form method="post" action='/posts/<%= @post.id %>/vote' class="inline-vote-form" >
-        <i type="submit" name="submit_param" value="submit_value" class="fa fa-arrow-circle-down vote-button downvote-button"></i>
+      <span class='points'><center><%= @post.votes.count %></center></span>
+      <form method="post" action='/posts/<%= @post.id %>/vote' class="inline-vote-form-downvote" >
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit" name="submit_param" value="submit_value" class="fa fa-arrow-circle-down vote-button downvote-button"></button>
       </form>
     </article>
 </div><br>
-
-
-
-
 <p><%= @post.answers.count %> Answers</p>
-
 <ul style="list-style: none;">
   <% @post.answers.each do |answer| %>
-    <li><%= answer.description_text  %></li><br>
     <li class='list-answer'><%= answer.description_text %></li><br>
       <ul style="list-style: none;">
 
@@ -37,7 +32,6 @@
   </div>
         <% answer.comments.each do |comment| %>
           <li class="list-comment"><%= comment.description_text %></li><br>
-
         <% end %>
       </ul>
   <% end %>

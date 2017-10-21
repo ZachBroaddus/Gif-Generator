@@ -47,6 +47,11 @@ width: 300px;
   text-shadow: 2px 2px 2px #ccc;
   font-size: 2em;
   /*float: left;*/
+  background-color: transparent;
+  border: none;
+  padding-top: 5px;
+  vertical-align: sub;
+  padding: 1px 0px 0px 0px;
 }
 
 .list-answer {
@@ -79,6 +84,5 @@ width: 300px;
 .answer-container {
   /*padding-right: 10px;*/
 }
-
 
 

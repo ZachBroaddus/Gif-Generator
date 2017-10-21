@@ -14,10 +14,27 @@ end
 
 
 post '/posts' do
-  # p params[:picture]
-  Post.create(photo_url: params[:picture], question: params[:question], user_id: session[:user_id])
+  @post = Post.create(photo_url: params[:picture], question: params[:question], user_id: session[:user_id], vote_tally: 0)
 
-  redirect "/"
+  redirect "/posts/#{@post.id}"
 end
 
+post '/posts/:id/vote' do
+  post = Post.find(params[:id])
+  post.votes.create(votable_type: "post", votable_id: post.id, user_id: session[:user_id])
+  if request.xhr? && logged_in?
+    post.votes.count.to_s
+  else
+    redirect "/posts/#{post.id}"
+  end
+end
 
+delete '/posts/:id/vote' do
+  post = Post.find(params[:id])
+  post.votes.last.destroy
+  if request.xhr? && logged_in?
+    post.votes.count.to_s
+  else
+    redirect "/posts/#{post.id}"
+  end
+end
