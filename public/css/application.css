@@ -23,11 +23,15 @@ nav li {
   padding-top: 20px;
 }
 
+#description-text {
+  font-family: Comic Sans MS;
+}
 
 .question {
   font-size: 120%;
   font-family: Verdana;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .poster {
@@ -38,7 +42,7 @@ nav li {
 .header {
   text-decoration: none;
   color: green;
-  font-size: 200%;
+  font-size: 210%;
   font-family: Comic Sans MS;
 }
 
@@ -76,7 +80,7 @@ width: 300px;
 }
 
 #bestanswer {
-  font-family: Comic Sans MS
+  font-family: Comic Sans MS;
 }
 
 
