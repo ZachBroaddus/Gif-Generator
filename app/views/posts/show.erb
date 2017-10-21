@@ -1,17 +1,56 @@
 <h3><%= @post.question %><br></h3>
-<img src="<%= @post.photo_url %>"><br>
+<img src="<%= @post.photo_url %>" class="image">
+
+<div class='post-container'>
+    <article id="<%= @post.id %>">
+      <form method="post" action='/posts/<%= @post.id %>/vote' class="inline-vote-form" >
+        <i type="submit" name="submit_param" value="submit_value" class="fa fa-arrow-circle-up vote-button upvote-button"></i>
+      </form>
+      <span class='points'><center><%= @post.vote_tally %></center></span>
+      <form method="post" action='/posts/<%= @post.id %>/vote' class="inline-vote-form" >
+        <i type="submit" name="submit_param" value="submit_value" class="fa fa-arrow-circle-down vote-button downvote-button"></i>
+      </form>
+    </article>
+</div><br>
+
+
+
 
 <p><%= @post.answers.count %> Answers</p>
 
 <ul style="list-style: none;">
   <% @post.answers.each do |answer| %>
-    <li><%= answer.description_text %></li><br>
+    <li class='list-answer'><%= answer.description_text %></li><br>
       <ul style="list-style: none;">
 
+  <div class='answer-container'>
+    <article id="<%= @post.id %>"><center>
+      <form method="post" action='/posts/<%= @post.id %>/vote' class="inline vote-form" >
+        <i type="submit" name="submit_param" value="submit_value" class="fa fa-arrow-circle-up vote-button upvote-button"></i>
+      </form>
+      <span class='points'><%= answer.vote_tally %></span>
+      <form method="post" action='/posts/<%= @post.id %>/vote' class="inline vote-form" >
+        <i type="submit" name="submit_param" value="submit_value" class="fa fa-arrow-circle-down vote-button downvote-button"></i>
+      </form></center>
+    </article>
+  </div>
         <% answer.comments.each do |comment| %>
-          <li><%= comment.description_text %></li><br>
+          <li class="list-comment"><%= comment.description_text %></li><br>
+
         <% end %>
       </ul>
   <% end %>
 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
 
