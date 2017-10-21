@@ -1,7 +1,3 @@
-<form method="post" action="/posts/<%= @post.id %>/answers">
-  <textarea placeholder="Answer" name="answer"></textarea><br><br>
-  <input type="submit" value="BORK!">
-</form>
 <% if logged_in? %>
   <form method="post" action="/posts/<%= @post.id %>/answers">
     <textarea placeholder="Answer" name="answer"></textarea><br><br>
