@@ -24,7 +24,7 @@
       <i class="fa fa-smile-o" aria-hidden="true"></i> <span id="bestanswer">BEST ANSWER!</span>
     <% end %>
 
-    <li class='list-answer'><%= answer.description_text %></li><br>
+    <li class='list-answer'><%= answer.description_text %><br><span class="poster">posted by <%= answer.user.username %></span></li><br>
     <!-- <a href="/answers/#{@answer.id}">Comment?</a> -->
       <ul style="list-style: none;">
 
