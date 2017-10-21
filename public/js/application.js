@@ -77,6 +77,7 @@ $(document).ready(function() {
     $("#new_comment_form").hide();
     $("#comment_on_post").show();
 
+    var ajaxRequest = $.ajax({url: $("#new_comment_form").attr("action"), data: $("#new_comment_form").serialize(), method: 'POST'});
 
   });
 });

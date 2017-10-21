@@ -25,18 +25,22 @@
 <% end %>
 
 
-<form id="new_comment_form" class="center hidden">
+
+<form action="/comments/new" method="POST" id="new_comment_form" class="center hidden">
+  <input type="hidden" name="commentable_id" value="<%= @post.id %>"
   <label for="comment_text">Comment:</label>
     <textarea id="comment_text" placeholder="What's your comment, fren?" name="comment_text"></textarea><br><br>
-      <input type="submit" class="button" value="BORK!"></input>
+     <input type="submit" class="button" value="BORK!"></input>
 </form>
 
+<strong><p><%= @post.comments.count %> Comments on this post</p></strong>
 <ul id="comment-list">
-  <li class="comment">
-  </li>
+  <% @post.comments.each do |comment| %>
+    <li class="comment"><%= comment.description_text %></li>
+  <% end %>
 </ul>
  <a href="/posts/<%= @post.id %>" id="comment_on_post">Comment?</a>
-<p><%= @post.answers.count %> Answers</p>
+<strong><p><%= @post.answers.count %> Answers</p></strong>
 <ul style="list-style: none;">
   <% @post.answers.each do |answer| %>
 
