@@ -72,21 +72,17 @@ post '/posts/:id/vote' do
   # p "THIS IS AN AJAX REQUEST"
   # p request.xhr?
 
-  if logged_in?
     if request.xhr?
       post.votes.create(votable_type: "post", votable_id: post.id, user_id: session[:user_id])
       post.votes.count.to_s
     end
-  end
-    redirect "/posts/#{post.id}"
 end
 
 delete '/posts/:id/vote' do
   post = Post.find(params[:id])
-  post.votes.last.destroy
-  if request.xhr? && logged_in?
+
+  if request.xhr?
+    post.votes.last.destroy
     post.votes.count.to_s
-  else
-    redirect "/posts/#{post.id}"
   end
 end
