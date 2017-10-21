@@ -23,6 +23,12 @@ nav li {
   padding-top: 20px;
 }
 
+#page-header {
+  padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 200%;
+}
+
 #description-text {
   /*font-family: Comic Sans MS;*/
 }
