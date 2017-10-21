@@ -53,7 +53,15 @@ $(document).ready(function() {
     ajaxRequest.done(function(response){
       $form.closest("article").find(".points").text(response);
       $form.find(".downvote-button").css("color", "#8c4331");
+      });
     });
   });
-  });
+
+  $("#comment_on_post").click(function(event){
+    event.preventDefault();
+    $("#comment_on_post").hide();
+    $("#new_comment_form").show();
+  })
+
+  $("#new")
 });

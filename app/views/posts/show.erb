@@ -25,7 +25,17 @@
 <% end %>
 
 
- <a href="/posts/#{@post.id}">Comment?</a>
+<form id="new_comment_form" class="center hidden">
+  <label for="comment_text">Comment:</label>
+    <textarea id="comment_text" placeholder="What's your comment, fren?" name="comment_text"></textarea><br><br>
+      <label for="commenter_name">Name:</label>
+      <input type="text" id="commenter_name" name="commenter_name"></input>
+      <input type="submit" class="button" value="BORK!"></input>
+</form>
+
+
+
+ <a href="/posts/<%= @post.id %>" id="comment_on_post">Comment?</a>
 <p><%= @post.answers.count %> Answers</p>
 <ul style="list-style: none;">
   <% @post.answers.each do |answer| %>
