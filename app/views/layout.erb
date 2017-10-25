@@ -18,31 +18,16 @@
 
   <title></title>
 </head>
-<body><div id="image"></div>
-  <div class="container">
-      <div class="all-header"><h1 class="header"><a class="header" href="/">Bork Overflow</a><img id="image-header" src="../../media/doge-glasses.png"></h1></div>
-
-    <nav>
-      <ul style="list-style: none;">
-        <li><a href="/">Home</a></li>
-        <% if logged_in? %>
-        <li>Hello, <%= current_user.first_name.capitalize %>!</li>
-        <li><a href="/posts/new">New Post</a></li>
-        <li><form method="POST" action="/sessions">
-              <input type="hidden" name="_method" value="DELETE" />
-              <input type="submit" class="button" value="Logout" />
-            </form>
-        </li>
-        <% else %>
-        <li><a href="/sessions/new">Login</a></li>
-        <li><a href="/users/new">Sign Up</a></li>
-        <% end %>
-      </ul>
-    </nav>
-    <div class="main">
+<body>
+  <div class="main">
     <%= yield %>
-    </div>
   </div>
-  <a href="https://i.redd.it/95js7oygrr8z.jpg" target="_blank"><img src="../../media/3dDoge.gif"></a>
 </body>
 </html>
+
+
+
+<!-- <form method="POST" action="/sessions">
+  <input type="hidden" name="_method" value="DELETE" />
+  <input type="submit" class="button" value="Logout" />
+</form> -->

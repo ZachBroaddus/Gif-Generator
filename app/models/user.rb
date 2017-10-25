@@ -6,11 +6,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
 
-  has_many :posts
-  has_many :answers
-  has_many :votes
-  has_many :comments
-
   def password
     @password ||= Password.new(hashed_password)
   end

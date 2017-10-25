@@ -9,7 +9,7 @@ post '/users' do
     session[:user_id] = @user.id
     redirect '/'
   else
-    p @user.errors.full_messages
+    @user.errors.full_messages
     @errors = @user.errors.full_messages
     erb :"users/new"
   end
