@@ -8,10 +8,10 @@ post '/sessions' do
     session[:user_id] = @user.id
     redirect '/'
   elsif params[:password].length == 0
-    @message = "Wow! You forgot your password!"
+    @message = "Whoa! Please enter a password!"
     erb :'sessions/new'
   else
-    @message = "Wow! Either your username or password was wrong! Plz try again!"
+    @message = "Whoa! Either your username or password was wrong!"
     erb :'sessions/new'
   end
 end
