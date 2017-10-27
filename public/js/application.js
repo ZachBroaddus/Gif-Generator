@@ -1,11 +1,20 @@
+ $(document).ready(function() {
+    $(".gif-keyword-form").submit(function(event) {
+     event.preventDefault();
+     var $form = $(this);
+     var actiony = $form.attr("action");
+     var method = $form.attr("method");
+      var data = $form.serialize()
 
-// $(function() {
+     var ajaxRequest = $.ajax({
+       url: actiony,
+       method: method,
+      data: data
+     });
 
-//     causeRepaintsOn = $("h1, h2, h3, p");
-
-//     $(window).resize(function() {
-//         causeRepaintsOn.css("z-index", 1);
-//     });
-
-// });
-
+    ajaxRequest.done(function(response){
+      console.log(response);
+      $form.closest("div").html(response)
+    });
+   });
+});
