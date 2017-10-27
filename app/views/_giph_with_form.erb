@@ -1,0 +1,13 @@
+<% if @giphy %>
+  <center><img src="<%= @giphy.image_url %>" width="480" height="392" frameBorder="0" class="giphy-embed" allowFullScreen></img></center>
+  <center><p><a href="<%= @giphy.image_url %>">via GIPHY</a></p></center>
+<% else %>
+  <center><img src="https://media.giphy.com/channel_assets/reactions/k2ybPvSfRQuK.gif" width="480" height="392" frameBorder="0" allowFullScreen></img></center>
+<% end %>
+
+<center>
+  <form method="post" action='/' class="gif-keyword-form" >
+    <input type="text" name="keyword" placeholder="Keyword" >
+    <input class="find-gif-button" type="submit" value= "Find a Gif!">
+  </form>
+</center>

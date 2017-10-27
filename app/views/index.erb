@@ -1,15 +1,10 @@
-<center><h1>Enter a keyword to return a random gif from the Giphy API!</h1></center>
+<center><div class="wrap"><h1>GIF Generator!</h1></div></center>
 
-<% if @giphy %>
-  <center><img src="<%= @giphy.image_url %>" width="480" height="392" frameBorder="0" class="giphy-embed" allowFullScreen></img></center>
-  <center><p><a href="<%= @giphy.image_url %>">via GIPHY</a></p></center>
-<% else %>
-  <center><img src="https://media.giphy.com/channel_assets/reactions/k2ybPvSfRQuK.gif" width="480" height="392" frameBorder="0" allowFullScreen></img></center>
-<% end %>
-
-<center>
-  <form method="post" action='/' class="gif-keyword-form" >
-    <input type="text" name="keyword" placeholder="Keyword" >
-    <input type="submit" value= "Find a Gif!">
-  </form>
-</center>
+<div class="wrapper">
+  <div class="box a"><%= erb :'/_giph_with_form'  %></div>
+  <div class="box b"><%= erb :'/_giph_with_form'  %></div>
+  <div class="box c"><%= erb :'/_giph_with_form'  %></div>
+  <div class="box d"><%= erb :'/_giph_with_form'  %></div>
+  <div class="box e"><%= erb :'/_giph_with_form'  %></div>
+  <div class="box f"><%= erb :'/_giph_with_form'  %></div>
+</div>
