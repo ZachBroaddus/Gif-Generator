@@ -1,5 +1,15 @@
-<h1>Things are kind of happening...</h1>
-<!-- <p><%= @giphy.image_url %></p> -->
+<center><h1>Enter a keyword to return a random gif from the Giphy API!</h1></center>
 
+<% if @giphy %>
+  <center><img src="<%= @giphy.image_url %>" width="480" height="392" frameBorder="0" class="giphy-embed" allowFullScreen></img></center>
+  <center><p><a href="<%= @giphy.image_url %>">via GIPHY</a></p></center>
+<% else %>
+  <center><img src="https://media.giphy.com/channel_assets/reactions/k2ybPvSfRQuK.gif" width="480" height="392" frameBorder="0" allowFullScreen></img></center>
+<% end %>
 
-<iframe src="<%= @giphy.image_url %>" width="480" height="392" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="<%= @giphy.image_url %>">via GIPHY</a></p>
+<center>
+  <form method="post" action='/' class="gif-keyword-form" >
+    <input type="text" name="keyword" placeholder="Keyword" >
+    <input type="submit" value= "Find a Gif!">
+  </form>
+</center>
