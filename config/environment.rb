@@ -20,6 +20,12 @@ require 'logger'
 require 'sinatra'
 require "sinatra/reloader" if development?
 
+begin
+  require 'dotenv'
+  Dotenv.load
+rescue LoadError
+end
+
 require 'bcrypt'
 
 require 'erb'

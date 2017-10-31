@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'dotenv'
 # PostgreSQL driver
 gem 'pg'
 
@@ -25,6 +24,7 @@ group :test do
 end
 
 group :test, :development do
+  gem 'dotenv'
   gem 'factory_girl'
   gem 'faker'
 end
