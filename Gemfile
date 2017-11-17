@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# ruby version
+ruby "2.2"
+
 # PostgreSQL driver
 gem 'pg'
 
@@ -26,5 +29,5 @@ end
 group :test, :development do
   gem 'dotenv'
   gem 'factory_girl'
-  # gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 end
