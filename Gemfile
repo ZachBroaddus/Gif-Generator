@@ -26,5 +26,5 @@ end
 group :test, :development do
   gem 'dotenv'
   gem 'factory_girl'
-  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+  # gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 end
