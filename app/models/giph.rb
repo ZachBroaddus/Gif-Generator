@@ -9,4 +9,3 @@ class Giph < ActiveRecord::Base
     result = JSON.parse(buffer)
   end
 end
-
