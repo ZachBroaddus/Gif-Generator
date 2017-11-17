@@ -20,6 +20,8 @@ gem 'shotgun'
 
 gem 'bcrypt'
 
+gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
@@ -30,6 +32,5 @@ end
 group :test, :development do
   gem 'dotenv'
   gem 'factory_girl'
-  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
-  # gem 'faker'
+
 end
