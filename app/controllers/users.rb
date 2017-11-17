@@ -17,5 +17,6 @@ end
 
 get '/users/:id' do
   @user = User.find_by(id: params[:id])
+  authorize!(@user)
   erb :"users/show"
 end
