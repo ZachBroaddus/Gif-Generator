@@ -1,3 +1,5 @@
+User.create!(username: "guest", email: "guest@guest.com", password: "guestyisbesty")
+
 10.times do
   User.create!(username: Faker::Science.scientist, email: Faker::Internet.safe_email, password: Faker::Internet.password(8, 14))
 end

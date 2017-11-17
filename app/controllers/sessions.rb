@@ -15,7 +15,8 @@ post '/sessions' do
 end
 
 delete '/sessions' do
-  session.delete(:user_id)
+  # session.delete(:user_id)
+  session[:user_id] = guest_user.id
   redirect '/'
 end
 
