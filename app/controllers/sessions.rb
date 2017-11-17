@@ -3,20 +3,23 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-  @user = User.find_by(username: params[:username])
+  @user = User.find_by(email: params[:email])
+
   if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
     redirect '/'
-  elsif params[:password].length == 0
-    @message = "Whoa! Please enter a password!"
-    erb :'sessions/new'
   else
-    @message = "Whoa! Either your username or password was wrong!"
-    erb :'sessions/new'
+    @message = "Whoa, there was a problem with your email and/or password!"
+    erb :"sessions/new"
   end
 end
 
 delete '/sessions' do
-  session[:user_id] = nil
+  session.delete(:user_id)
   redirect '/'
 end
+
+get '/not_authorized' do
+  erb :not_authorized
+end
+

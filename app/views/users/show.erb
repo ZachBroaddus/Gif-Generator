@@ -1,1 +1,14 @@
+<div class="center-align"><h3>User Profile</h3>
 
+<h4><%= @user.username.capitalize %>'s GIFs</h4>
+
+<% if @user.giphs.any? %>
+<ul>
+  <% @user.giphs.order(created_at: :desc).each do |giph|%>
+  <li><%= erb :'_giph', locals: { giph: giph } %></li>
+  <% end %>
+</ul>
+<% else %>
+  <p>You don't have any saved GIFs!</p>
+<% end %>
+</div>

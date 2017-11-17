@@ -1,0 +1,8 @@
+<div class="box">
+  <% if giph %>
+    <center><img src="<%= giph.image_url %>" width="480" height="392" frameBorder="0" class="giphy-embed" allowFullScreen></img></center>
+    <center><p><a href="<%= giph.image_url %>">via GIPHY</a></p></center>
+  <% else %>
+    <center><img src="https://media.giphy.com/channel_assets/reactions/k2ybPvSfRQuK.gif" width="480" height="392" frameBorder="0" allowFullScreen></img></center>
+  <% end %>
+</div>

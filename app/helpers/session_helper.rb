@@ -18,6 +18,6 @@ def authorized?(user)
   current_user == user
 end
 
-def poster?
-  current_user == @post.user
-end
+# def poster?
+#   current_user == @post.user
+# end

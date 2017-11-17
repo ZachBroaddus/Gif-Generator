@@ -1,19 +1,22 @@
 class User < ActiveRecord::Base
   include BCrypt
 
-  validates :username, :first_name, :last_name, :email, presence: true
+  has_many :giphs
+
   validate :validate_password
   validates_uniqueness_of :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
+  validates :username, :email, :password, presence: true
+
 
   def password
-    @password ||= Password.new(hashed_password)
+    @password ||= Password.new(password_hash)
   end
 
   def password=(plain_text_password)
     @raw_password = plain_text_password
     @password = Password.create(plain_text_password)
-    self.hashed_password = @password
+    self.password_hash = @password
   end
 
   def authenticate(plain_text_password)
