@@ -5,6 +5,7 @@
     var actiony = $form.attr("action");
     var method = $form.attr("method");
     var data = $form.serialize()
+    alert("The event listener is set up!");
 
     var ajaxRequest = $.ajax({
       url: actiony,
@@ -14,7 +15,13 @@
 
     ajaxRequest.done(function(response){
       console.log(response);
+      console.log("Works OK")
       $form.closest("div").html(response)
+    });
+
+    ajaxRequest.fail(function(response){
+      console.log(response);
+      console.log("Shit failed, dude.")
     });
    });
 });
