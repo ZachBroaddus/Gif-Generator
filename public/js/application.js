@@ -21,7 +21,7 @@
 
     ajaxRequest.fail(function(response){
       console.log(response);
-      console.log("Shit failed, dude.")
+      console.log("Def failed, dude.")
     });
    });
 });
